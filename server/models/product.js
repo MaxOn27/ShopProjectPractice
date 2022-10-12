@@ -11,7 +11,12 @@ class Product {
     save() {
         return db.execute(
             "INSERT INTO products (title, imageUrl, price, description) VALUES (?, ?, ?, ?)",
-            [this.title, this.imageUrl, this.price, this.description]
+            [this.title, this.imageUrl, this.price, this.description],
+            (error, result) => {
+                if (error) {
+                    console.log(error)
+                }
+            }
         );
     }
 

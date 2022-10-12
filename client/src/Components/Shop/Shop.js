@@ -12,12 +12,18 @@ const Shop = () => {
         description: "Awesome book"
         }]);
 
+    const loadProducts = async () => {
+        const response = await Axios.get("http://localhost:8080/api/get")
+        setProducts(response.data)
+    };
+
     useEffect(() => {
-        Axios.get("http://localhost:8080/api/get")
-            .then(response => {
-                console.log(response)
-                setProducts(response.data)
-            })
+        // Axios.get("http://localhost:8080/api/get")
+            /*.then(response => {
+                console.log(response)*/
+                // setProducts(response.data)
+            // })
+        loadProducts();
     }, []);
 
     return (
