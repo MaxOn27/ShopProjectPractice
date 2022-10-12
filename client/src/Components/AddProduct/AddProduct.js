@@ -9,21 +9,21 @@ const AddProduct = () => {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
 
-    // const addProduct = () => {
-    //     Axios.post("http://localhost:3001/api/post", {
-    //         title: title,
-    //         imageUrl: imageUrl,
-    //         price: price,
-    //         description: description
-    //     }).then((req, res) => {
-    //         console.log(res);
-    //         alert("Success");
-    //     }).catch(err => console.log(err));
-    // };
+    const addProduct = () => {
+        Axios.post("http://localhost:8080/api/post", {
+            title: title,
+            imageUrl: imageUrl,
+            price: price,
+            description: description
+        }).then((req, res) => {
+            console.log(res);
+            alert("Success");
+        }).catch(err => console.log(err));
+    };
 
     return (
         <Fragment>
-            <form action="/" method="post" className={classes.add_product}>
+            <form action="/" method="post" className={classes.add_product} onSubmit={addProduct}>
                 <label htmlFor="title">Title</label>
                 <input name="title" type="text" placeholder="Title"
                        onChange={(event) => setTitle(event.target.value)}/>

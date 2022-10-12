@@ -4,26 +4,31 @@ import classes from "../Styles/components.module.css";
 import Axios from "axios";
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([{
+        id: 1,
+        title: "Product",
+        imageUrl: "https://toppng.com/uploads/preview/open-book-115494189764c5rqgceul.png",
+        price: "13.99",
+        description: "Awesome book"
+        }]);
 
-    // useEffect(() => {
-    //     Axios.get("http://localhost:3001/api/get")
-    //         .then(response => {
-    //             console.log(response)
-    //             setProducts(response.data)
-    //         })
-    // }, []);
+    useEffect(() => {
+        Axios.get("http://localhost:8080/api/get")
+            .then(response => {
+                console.log(response)
+                setProducts(response.data)
+            })
+    }, []);
 
     return (
         <div className={classes.product_card_wrapper}>
-            here
-            {/*{products.map((product) => (*/}
-            {/*    <div key={product.id} className={classes.product_card}>*/}
-            {/*        <h3>{product.title}</h3>*/}
-            {/*        <img src={product.imageUrl} alt="/"/>*/}
-            {/*        <h4>${product.price}</h4>*/}
-            {/*    </div>*/}
-            {/*))}*/}
+            {products.map((product) => (
+                <div key={product.id} className={classes.product_card}>
+                    <h3>{product.title}</h3>
+                    <img src={product.imageUrl} alt="/"/>
+                    <h4>${product.price}</h4>
+                </div>
+            ))}
         </div>
     );
 };
