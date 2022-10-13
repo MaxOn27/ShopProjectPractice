@@ -27,6 +27,11 @@ app.post("/api/post-product", (req, res) => {
     product.save();
 });
 
+app.delete("/api/remove-product/:id", (req, res) => {
+    const {id} = req.params;
+    Product.deleteById(id)
+});
+
 app.listen(process.env.PORT || 8080, () => {
     console.log("Server is running on localhost:8080")
 })

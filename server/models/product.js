@@ -23,6 +23,16 @@ class Product {
     static fetchAll() {
         return db.execute("SELECT * FROM products")
     }
+
+    static deleteById (id) {
+        return db.execute(
+            "DELETE FROM products WHERE id = ?",[id],
+            (error, result) => {
+                if(error) {
+                    console.log(error);
+                }
+            })
+    }
 }
 
 module.exports = Product;

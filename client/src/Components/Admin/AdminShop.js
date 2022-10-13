@@ -1,14 +1,13 @@
 import React, {Fragment} from 'react';
 
-
 import ProductList from "../../utils/ProductList";
 
-const Shop = () => {
+const AdminShop = () => {
     return (
         <Fragment>
-            <ProductList/>
+            <ProductList isAdmin={true}/>
         </Fragment>
     );
 };
 
-export default Shop;
+export default AdminShop;

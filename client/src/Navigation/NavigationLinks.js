@@ -12,6 +12,9 @@ const NavigationLinks = () => {
                         <NavLink to="/">Shop</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/admin-shop">Admin Shop</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/cart">Cart</NavLink>
                     </li>
                     <li>
