@@ -11,9 +11,9 @@ const AddProduct = () => {
     const [description, setDescription] = useState("");
     const navigate = useNavigate()
 
-    const addProduct = (e) => {
-        e.preventDefault()
-        Axios.post("http://localhost:8080/api/post", {
+    const addProduct = (event) => {
+        event.preventDefault();
+        Axios.post("http://localhost:8080/api/post-product", {
             title,
             imageUrl,
             price,
