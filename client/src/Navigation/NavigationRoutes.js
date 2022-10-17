@@ -16,7 +16,7 @@ const NavigationRoutes = () => {
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/add-product" element={<AddProduct/>}/>
                 <Route path="/user-info" element={<UserInfo/>}/>
-                <Route path="/product-info" element={<ProductInfo/>}></Route>
+                <Route path="/product-info/:id" element={<ProductInfo/>}></Route>
 
             </Routes>
     );

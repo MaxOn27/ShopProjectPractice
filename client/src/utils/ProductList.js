@@ -14,21 +14,23 @@ const ProductList = ({isAdmin}) => {
         setProducts(response.data);
     };
 
-    const deleteProduct = (id) => {
-        Axios.delete(`http://localhost:8080/api/remove-product/${id}`)
-            .then((products) => console.log(products))
-            .catch(error => console.log(error));
+    const deleteProduct = ({id, title}) => {
+        if (window.confirm(`Do you really want to delete ${title}?`)) {
+            Axios.delete(`http://localhost:8080/api/remove-product/${id}`)
+                .then((products) => console.log(products))
+                .catch(error => console.log(error));
+        }
 
         setTimeout(() => loadProducts(), 200);
     }
 
-    let deleteAndEditProductFragment = (id) => {
+    let deleteAndEditProductFragment = (product) => {
         if (isAdmin === true) {
             return (
                 <Fragment>
                     <button className={classes.edit_product}>Edit</button>
                     <button className={classes.delete_product}
-                            onClick={() => deleteProduct(id)}>Delete
+                            onClick={() => deleteProduct(product)}>Delete
                     </button>
                 </Fragment>
             )
@@ -49,10 +51,12 @@ const ProductList = ({isAdmin}) => {
                     <img src={product.imageUrl} alt="/"/>
                     <h4>${product.price}</h4>
                     <div className={classes.card_btn}>
-                        <Link className={classes.more} to="/product-info">
+                        <Link className={classes.more}
+                              to={`/product-info/${product.id}`}
+                              state={product}>
                             More
                         </Link>
-                        {deleteAndEditProductFragment(product.id)}
+                        {deleteAndEditProductFragment(product)}
                     </div>
                 </div>
             ))}

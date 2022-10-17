@@ -24,7 +24,17 @@ class Product {
         return db.execute("SELECT * FROM products")
     }
 
-    static deleteById (id) {
+    // static fetchById(id) {
+    //     return db.execute("SELECT FROM products WHERE id = ?"
+    //         , [id],
+    //         (error, result) => {
+    //             if(error) {
+    //                 console.log(error);
+    //             }
+    //         })
+    // }
+
+    static deleteById(id) {
         return db.execute(
             "DELETE FROM products WHERE id = ?",[id],
             (error, result) => {

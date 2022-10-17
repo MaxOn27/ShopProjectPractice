@@ -127,3 +127,27 @@
     box-shadow: 0 0 12px -3px rgba(0, 0, 0, 0.6);
     transition: ease-in-out .3s;
 }
+
+.description_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description_wrapper img {
+    height: 400px;
+    width: 490px;
+}
+
+.description_wrapper h1, .description_wrapper .description_price {
+    font-weight: 500;
+}
+
+.description_wrapper h3 {
+    font-weight: 300;
+}
+
+.description_wrapper .description {
+    text-align: center;
+    width: 50%;
+}
