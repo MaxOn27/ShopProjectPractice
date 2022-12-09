@@ -4,7 +4,6 @@ import {useLocation} from "react-router-dom";
 import classes from "../Styles/components.module.css";
 
 const ProductInfo = () => {
-
     const {state} = useLocation();
 
     return (

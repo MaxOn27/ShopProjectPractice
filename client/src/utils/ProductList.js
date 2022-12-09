@@ -28,7 +28,13 @@ const ProductList = ({isAdmin}) => {
         if (isAdmin === true) {
             return (
                 <Fragment>
-                    <button className={classes.edit_product}>Edit</button>
+                    <Link
+                        to={`/update-product/${product.id}`}
+                        state={product}
+                        className={classes.edit_product}
+                    >
+                        Edit
+                    </Link>
                     <button className={classes.delete_product}
                             onClick={() => deleteProduct(product)}>Delete
                     </button>

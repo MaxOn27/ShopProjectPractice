@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Axios from "axios";
 
@@ -29,7 +29,7 @@ const AddProduct = () => {
 
     return (
         <Fragment>
-            <form action="/" method="post"
+            <form action="/" method="POST"
                   className={classes.add_product} onSubmit={addProduct}>
                 <label htmlFor="title">Title</label>
                 <input name="title" type="text" placeholder="Title"

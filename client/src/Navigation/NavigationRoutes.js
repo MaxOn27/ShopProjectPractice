@@ -7,6 +7,7 @@ import Cart from "../Components/Cart/Cart";
 import AddProduct from "../Components/AddProduct/AddProduct";
 import UserInfo from "../Components/UserInfo/UserInfo";
 import ProductInfo from "../Components/ProductInfo/ProductInfo";
+import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
 
 const NavigationRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const NavigationRoutes = () => {
                 <Route path="/add-product" element={<AddProduct/>}/>
                 <Route path="/user-info" element={<UserInfo/>}/>
                 <Route path="/product-info/:id" element={<ProductInfo/>}></Route>
+                <Route path="/update-product/:id" element={<UpdateProduct/>}></Route>
 
             </Routes>
     );

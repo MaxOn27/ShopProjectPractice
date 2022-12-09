@@ -20,19 +20,21 @@ class Product {
         );
     }
 
+    update(id) {
+        return db.execute(
+            "UPDATE products SET title = ?, imageUrl = ?, price = ?, description = ? where id = ?",
+            [this.title, this.imageUrl, this.price, this.description, id],
+            (error, result) => {
+                if (error) {
+                    console.log(error)
+                }
+            }
+        );
+    }
+
     static fetchAll() {
         return db.execute("SELECT * FROM products")
     }
-
-    // static fetchById(id) {
-    //     return db.execute("SELECT FROM products WHERE id = ?"
-    //         , [id],
-    //         (error, result) => {
-    //             if(error) {
-    //                 console.log(error);
-    //             }
-    //         })
-    // }
 
     static deleteById(id) {
         return db.execute(

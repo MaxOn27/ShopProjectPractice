@@ -38,7 +38,7 @@
 
 }
 
-.product_card .more {
+.product_card .more, .product_card .edit_product {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
     text-decoration: none;
 }
 
-.product_card .more:hover, .product_card .card_btn button:hover {
+.product_card .more:hover, .product_card .edit_product:hover, .product_card .card_btn button:hover {
     cursor: pointer;
     box-shadow: 0 0 12px -3px rgba(205, 205, 205, 0.9);
     transition: ease-in-out .3s;
